@@ -76,8 +76,6 @@ p {
 
 footer {
   margin-top: 45px;
-  margin-left: 5px;
-  margin-right: 5px;
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
   color: #999;
@@ -93,10 +91,12 @@ footer a:hover {
 
 footer thanks {
   float: left;
+  margin-left: 5px;
 }
 
 footer me {
   float: right;
+  margin-right: 5px;
 }
 
 /* mixins, variables, etc. */
