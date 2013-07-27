@@ -45,4 +45,7 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 # gem 'debugger', group: [:development, :test]
 
 # Use enumerations in models
-gem 'enumerize'
+gem 'enumerize', '0.6.1'
+
+# Add Bootstrap
+gem 'bootstrap-sass', '2.3.2.1'
