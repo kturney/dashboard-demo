@@ -1,8 +1,18 @@
-<h2><%= @user.name %>'s Teacher Page</h2>
+<h3><%= @user.name %>'s Teacher Page</h3>
 
-<h4>Courses</h4>
-<ul class='course-list'>
-  <% @courses.each do |course| %>
-    <li class="row"><%= link_to course.name, {:action => :show, :controller => :courses, :id => course.id} %></li>
-  <% end %>
-</ul>
+<div style="overflow: hidden;">
+  <div style="float: left">
+    <% if @courses.empty? %>
+      <h4>No Courses</h4>
+    <% else %>
+      <h4>Courses</h4>
+      <ul class='course-list'>
+        <% @courses.each do |course| %>
+          <li class="row"><%= link_to course.name, {:action => :show, :controller => :courses, :id => course.id} %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+
+  <%= link_to 'Create Course', new_course_path, class: 'btn btn-medium btn-success', style: 'float: right' %>
+</div>
