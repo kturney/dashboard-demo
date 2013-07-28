@@ -1,24 +1,8 @@
 <h2><%= @user.name %>'s Teacher Page</h2>
 
-<!--<table>
-  <thead>
-  <tr>
-    <th>Courses</th>
-  </tr>
-  </thead>
-
-  <tbody>
-  <% @courses.each do |course| %>
-    <tr>
-      <td><%= course.name %></td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
--->
 <h4>Courses</h4>
-<div class="table table-striped table-bordered">
+<ul class='course-list'>
   <% @courses.each do |course| %>
-    <%= link_to course.name, {:action => :show, :controller => :courses, :id => course.id}, class: 'row' %>
+    <li class="row"><%= link_to course.name, {:action => :show, :controller => :courses, :id => course.id} %></li>
   <% end %>
-</div>
+</ul>
