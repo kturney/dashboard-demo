@@ -3,6 +3,7 @@ class AssignmentsController < ApplicationController
 
   before_action :signed_in_user
   before_action :set_assignment, only: [:show, :edit, :update, :destroy]
+  before_action :check_teachers_course, only: [:edit, :update, :destroy]
 
   # GET /assignments
   # GET /assignments.json
@@ -73,5 +74,13 @@ class AssignmentsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def assignment_params
       params.require(:assignment).permit(:title, :description, :due_date, :course_id, :active)
+    end
+
+    def check_teachers_course
+      redirect_to @assignment, notice: 'Only a course\'s teacher may modify its assignments' unless users_course?
+    end
+
+    def users_course?
+      @assignment.course.teacher == current_user
     end
 end
