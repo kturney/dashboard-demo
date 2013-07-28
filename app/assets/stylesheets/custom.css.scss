@@ -18,6 +18,13 @@ textarea {
   resize: vertical;
 }
 
+table {
+  @extend .table;
+  @extend .table-striped;
+  @extend .table-bordered;
+  @extend .table-condensed;
+}
+
 .center {
   text-align: center;
 }
