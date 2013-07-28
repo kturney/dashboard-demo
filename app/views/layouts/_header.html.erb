@@ -5,6 +5,7 @@
       <nav>
         <ul class="nav pull-right">
           <% if signed_in? %>
+            <li><%= link_to "Home", {:action => :show, :controller => :users, :id => current_user.id} %></li>
             <li><%= link_to "Sign out", '/signout', method: 'delete' %></li>
           <% else %>
             <li><%= link_to "Sign in", '/signin', method: 'get' %></li>
