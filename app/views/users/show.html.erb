@@ -1,3 +1,9 @@
-<h2><%= @user.name %></h2>
-Email: <%= @user.email %>
-Group: <%= @user.group %>
+<div class="row">
+  <div class="span6 offset3">
+    <h2><%= @user.name %></h2>
+    <ul class="user_info">
+      <li>Email: <%= @user.email %></li>
+      <li>Group: <%= @user.group %></li>
+    </ul>
+  </div>
+</div>
