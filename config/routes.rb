@@ -1,4 +1,6 @@
 Dashboard::Application.routes.draw do
+  resources :assignments
+
   resources :courses
 
   resources :users
