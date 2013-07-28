@@ -1,11 +1,14 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="navbar-inner">
     <div class="container">
-      <%= link_to "Dashboard", '#', id: "logo" %>
+      <%= link_to "Hogwarts Dashboard", '/', id: "logo" %>
       <nav>
         <ul class="nav pull-right">
-          <li><%= link_to "Home",    '#' %></li>
-          <li><%= link_to "Sign in", '#' %></li>
+          <% if signed_in? %>
+            <li><%= link_to "Sign out", '/signout', method: 'delete' %></li>
+          <% else %>
+            <li><%= link_to "Sign in", '/signin', method: 'get' %></li>
+          <% end %>
         </ul>
       </nav>
     </div>

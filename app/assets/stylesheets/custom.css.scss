@@ -53,54 +53,6 @@ p {
   line-height: 1.7em;
 }
 
-/* header */
-
-#logo {
-  float: left;
-  margin-right: 10px;
-  font-size: 1.7em;
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  padding-top: 9px;
-  font-weight: bold;
-  line-height: 1;
-}
-
-#logo:hover {
-  color: #fff;
-  text-decoration: none;
-}
-
-/* footer */
-
-footer {
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid #eaeaea;
-  color: #999;
-}
-
-footer a {
-  color: #555;
-}
-
-footer a:hover {
-  color: #222;
-}
-
-footer thanks {
-  float: left;
-  margin-left: 5px;
-}
-
-footer me {
-  float: right;
-  margin-right: 5px;
-}
-
-/* mixins, variables, etc. */
-
 $grayMediumLight: #eaeaea;
 
 @mixin box_sizing {
@@ -108,8 +60,6 @@ $grayMediumLight: #eaeaea;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-
-/* miscellaneous */
 
 .debug_dump {
   clear: both;

@@ -1,0 +1,10 @@
+<% if Rails.env.development? && signed_in? %>
+  <div class="debug_dump">
+    Current Cookie:
+    <ul>
+      <li><%= current_user.name %></li>
+      <li><%= current_user.email %></li>
+      <li><%= current_user.group %></li>
+    </ul>
+  </div>
+<% end %>
