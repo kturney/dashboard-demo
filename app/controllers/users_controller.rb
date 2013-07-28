@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   include SessionsHelper
 
+  before_action :signed_in_user
+
   def show
     @user = User.find(params[:id])
 

@@ -1,4 +1,7 @@
 class AssignmentsController < ApplicationController
+  include SessionsHelper
+
+  before_action :signed_in_user
   before_action :set_assignment, only: [:show, :edit, :update, :destroy]
 
   # GET /assignments

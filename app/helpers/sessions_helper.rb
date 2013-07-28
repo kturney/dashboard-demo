@@ -24,4 +24,8 @@ module SessionsHelper
     remember_token = User.encrypt(cookies[:remember_token])
     @current_user ||= User.find_by(remember_token: remember_token)
   end
+
+  def signed_in_user
+    redirect_to '/signin', notice: 'Please sign in' unless signed_in?
+  end
 end
