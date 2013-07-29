@@ -13,7 +13,7 @@ class CoursesController < ApplicationController
   # GET /courses/1
   # GET /courses/1.json
   def show
-    @assignments = Assignment.where(:course_id => @course.id)
+    @assignments = Assignment.where(:course_id => @course.id).order(:due_date)
     @hide_course_name = true
   end
 
