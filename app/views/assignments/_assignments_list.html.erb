@@ -7,8 +7,9 @@
     <% if !defined?(@hide_course_name) || !@hide_course_name %>
       <th>Course</th>
     <% end %>
-    <th>Active</th>
-    <th></th>
+    <% if current_user.group.teacher? %>
+      <th>Active</th>
+    <% end %>
     <th></th>
     <th></th>
   </tr>
@@ -23,8 +24,13 @@
       <% if !defined?(@hide_course_name) && !@hide_course_name %>
         <td><%= assignment.course.name %></td>
       <% end %>
-      <td><%= assignment.active %></td>
-      <td><%= link_to 'Show', assignment %></td>
+      <% if current_user.group.teacher? %>
+        <td>
+          <%= form_for assignment do |f| %>
+            <%= f.check_box :active, :onclick => 'this.form.submit()' %>
+          <% end %>
+        </td>
+      <% end %>
       <td><%= link_to 'Edit', edit_assignment_path(assignment) %></td>
       <td><%= link_to 'Destroy', assignment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
